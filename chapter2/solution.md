@@ -22,10 +22,24 @@
 
 # Use the Concepts
 
-*
+* Lay it out like the second method used in Page 14.
 
-*
+* Indexed addressing mode
 
 * 3142
 
-*
+* 6532
+
+* 123472
+
+* 9123498
+
+# Going Further
+
+* Theoretically, one seems sufficient.
+
+* Convenience, efficiency.
+
+* TODO
+
+* TODO
