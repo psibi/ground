@@ -11,8 +11,8 @@ $ file filename
 filename: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), statically linked, not stripped
 ```
 
---32 implies Intel i386 architecture
--m Is an switch for emulating the linker.
+* --32 implies Intel i386 architecture
+* -m Is an switch for emulating the linker.
 You can use the `-V` option to find out the supported emulations.
 
 ``` shellsession
