@@ -17,8 +17,10 @@
   rather than a memory location.
 * Direct Addressing mode: Instruction contains a memory address to
   access.
-  => Index register offsets the address in the mode.
-  Example: memory address: 2002, Index register: 4 => Access address: 2006
+* Indexed addressing mode: Instruction contains a memory address to
+  access.
+  * Index register offsets the address in the mode. Example: memory
+    address: 2002, Index register: 4 => Access address: 2006
 
 On x86 processors, you can also specify a *multiplier* for the index
 register.
