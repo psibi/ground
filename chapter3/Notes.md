@@ -30,4 +30,24 @@ GNU ld (GNU Binutils for Ubuntu) 2.26.1
    i386pe
 ```
 
+## Assembly constructs
+
+* Anything starting with a period is a instruction to the assembler
+  itself. These are called assembler directives or pseudo
+  operations. Example: `.section .data`
+* The `.section` command breaks your program into section.
+* The `.section .data` starts the data section where you list any
+  memory storage you will need for data.
+* `.globl` means that the assembler shouldn't discard the symbol after
+  assembly because the linker will need it. `_start` is a special
+  symbol that always needs to be marked with `.globl` because it marks
+  the location of the start of the program.
+* `_start:` defines the value of the `_start` label. A *label* is a
+symbol followed by a colon.
+* The `$` sign in `movl $1, %eax` indicates that we want to use
+  immediate mode addressing.
+* The `int` in `int $0x80` interrupts the normal program flow and
+  transfers control from our program to Linux so that it will do a
+  system call.
+
 Reference: http://stackoverflow.com/q/18429901/1651941
