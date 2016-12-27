@@ -1,3 +1,3 @@
 # Programming from the Ground up
 
-Contains my notes and solutons for the book.
+Contains my notes and solutions for the book.
