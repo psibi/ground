@@ -54,10 +54,10 @@ they are called.
   * Then it modifies the instruction pointer (`%eip`) to point to the
     start of the function.
 * Now the function itself has to do some bookkeeping. It saves the
-  current base pointer register into stack via `mov`. Next it copies
-  the stack pointer to `%ebp` via `movl %esp, %ebp`. And then the
-  function reserves spackes on the stack for any local variables it
-  needs.
+  current base pointer register into stack via `pushl %ebp`. Next it
+  copies the stack pointer to `%ebp` via `movl %esp, %ebp`. And then
+  the function reserves spackes on the stack for any local variables
+  it needs.
 * When the function is done executing, it does three things:
   * It stores it's return value in `%eax`.
   * It resets the stack to what it was when it was called.
