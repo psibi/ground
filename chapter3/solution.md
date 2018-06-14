@@ -26,11 +26,12 @@
 * [./code/ans1.s](Code)
 * [./code/ans2.s](Code)
 * [./code/ans3.s](code)
-* TODO
+* [./code/ans4.s](code)
 * [./code/ans5.s](code)
 * `movl _start, %eax` will move the value at the address of the
   `_start` symbol into the register eax. `movl $start, %eax` will move
-  the address of the symbol _start into eax.
+  the address of the symbol`_start` into eax.
+  [Reference](https://stackoverflow.com/a/4882773/1651941)
 
 Going futher
 
