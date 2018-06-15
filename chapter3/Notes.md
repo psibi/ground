@@ -30,7 +30,14 @@ GNU ld (GNU Binutils for Ubuntu) 2.26.1
    i386pe
 ```
 
+The above commands can be combined to a single command:
+```
+$ gcc -m32 -nostdlib filename.s -o filename
+```
+
 Reference: http://stackoverflow.com/q/18429901/1651941
+* [GCC Assembler option](https://gcc.gnu.org/onlinedocs/gcc/Assembler-Options.html)
+* [GCC Linker option](https://gcc.gnu.org/onlinedocs/gcc-4.6.4/gcc/Link-Options.html)
 
 ## Assembly constructs
 
