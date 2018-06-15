@@ -18,6 +18,7 @@ _start:
         call power
         addl $8, %esp
 
+        popl %ebx
         addl %eax, %ebx
 
         movl $1, %eax
