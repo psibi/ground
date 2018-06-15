@@ -1,5 +1,7 @@
 # All About Functions
 
+Note that this book uses AT&T assembly syntax for code.
+
 ## How Functions work
 
 A function is comprised of
@@ -77,3 +79,5 @@ ret
 
 The above is done because the return address is not at the top of the
 stack at that time.
+
+[Ref: Factorial example in 64 bit architecture](https://picoledelimao.github.io/blog/2016/02/21/factorial-function-in-assembly/)
