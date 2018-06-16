@@ -35,10 +35,11 @@
   
   I have further code based on this which will help in deeper
   understanding of this question.
-  * [../chapter4/code/addressing_variant_1.s](Variant 1)
-  * [../chapter4/code/addressing_variant_2.s](Variant 2)
-  * [../chapter4/code/addressing_variant_3.s](Variant 3)
-  * [../chapter4/code/addressing_variant_4.s](Variant 4)
+
+* [../chapter4/code/addressing_variant_1.s](Variant 1)
+* [../chapter4/code/addressing_variant_2.s](Variant 2)
+* [../chapter4/code/addressing_variant_3.s](Variant 3)
+* [../chapter4/code/addressing_variant_4.s](Variant 4)
 
 Going futher
 
