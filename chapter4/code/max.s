@@ -5,6 +5,13 @@
 data_items:
         .long 81, 2, 10, 15, 8, 139, 100, 150, 87, 23, 48, 0 # 0 denotes the last number
 
+second_list:
+
+        .long 1,5,45,9,0
+
+third_list:
+        .long 20,98,43,45,32,43,0
+
         .section .text
 
         .globl _start
@@ -12,6 +19,16 @@ data_items:
 
 _start:
         pushl $data_items
+
+        call maximum
+        addl $4, %esp
+
+        pushl $second_list
+
+        call maximum
+        addl $4, %esp
+
+        pushl $third_list
 
         call maximum
         addl $4, %esp
