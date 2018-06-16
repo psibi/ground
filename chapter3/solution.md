@@ -23,11 +23,11 @@
 
 # Use the concepts
 
-* [./code/ans1.s](Code)
-* [./code/ans2.s](Code)
-* [./code/ans3.s](code)
-* [./code/ans4.s](code)
-* [./code/ans5.s](code)
+* [Code](./code/ans1.s)
+* [Code](./code/ans2.s)
+* [Code](./code/ans3.s)
+* [Code](./code/ans4.s)
+* [Code](./code/ans5.s)
 * `movl _start, %eax` will move the value at the address of the
   `_start` symbol into the register eax. `movl $start, %eax` will move
   the address of the symbol`_start` into eax.
@@ -36,10 +36,10 @@
   I have further code based on this which will help in deeper
   understanding of this question.
 
-* [../chapter4/code/addressing_variant_1.s](Variant 1)
-* [../chapter4/code/addressing_variant_2.s](Variant 2)
-* [../chapter4/code/addressing_variant_3.s](Variant 3)
-* [../chapter4/code/addressing_variant_4.s](Variant 4)
+* [Variant 1](../chapter4/code/addressing_variant_1.s)
+* [Variant 2](../chapter4/code/addressing_variant_2.s)
+* [Variant 3](../chapter4/code/addressing_variant_3.s)
+* [Variant 4](../chapter4/code/addressing_variant_4.s)
 
 Going futher
 
