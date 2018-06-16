@@ -33,7 +33,7 @@ they are called.
 ## Assembly language functions using the C calling conventions
 
 * Each computer program that runs uses a region of memory called the
-  statck to enable functions to work properly.
+  stack to enable functions to work properly.
 * In memory, the stack starts at the top of the memory and grows
   downwards due to architectural considerations. (So "top of the
   stack" means bottom of the stack's memory.)
