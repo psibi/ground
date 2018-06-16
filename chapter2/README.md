@@ -33,5 +33,12 @@ Reference: https://lists.gnu.org/archive/html/pgubook-readers/2011-10/msg00000.h
 * Base pointer addressing mode: Similar to indirect addressing mode
   but also includes the offset.
 
+## Registers
 
+### General purpose
 
+%eax, %ebx, %ecx, %edx, %edi, %esi
+
+### Special purpose
+
+%ebp, %esp, %eip, %eflags
