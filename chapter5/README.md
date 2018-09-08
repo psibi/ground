@@ -66,3 +66,8 @@ Linux programs usually have at least three open file descriptors when they begin
 * Communication between processes is usually done through special files called pipes.
 
 
+External Resource:
+
+* [argc and argv in x86](https://stackoverflow.com/a/16722942/1651941)
+* [Sample argc code](./code/argc.s)
+
