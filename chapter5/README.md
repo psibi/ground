@@ -35,6 +35,34 @@
 ### Static Storage
 
 * Declared using `.long` and `.byte` directives.
-* This takes up space in your executable.
+* The above directive takes up space in your executable.
+
+### .bss section
+
+* `.bss` section is like `.data` section except it doesn't take up space in executable.
+* This section reserves storage but can't initialize it.
+
+```
+.section .bss
+.lcomm my_buffer, 500
+```
+
+The directive `.lcomm` will create a symbol `my_buffer` that refers to a 500 byte storage location
+
+## Standard and Special files
+
+Linux programs usually have at least three open file descriptors when they begin.
+
+* STDIN
+  - Read only file usually represents your keyboard.
+  - File descriptor number: 0
+* STDOUT
+  - Write only file usually represents your screen display.
+  - File descriptor number: 1
+* STDERR
+  - Write only file usually represents your screen display.
+  - File descriptor number: 2
+
+* Communication between processes is usually done through special files called pipes.
 
 
