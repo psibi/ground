@@ -2,7 +2,7 @@
 # ~/g/g/c/code (master) $ ld -m elf_i386 filename.o -o filename
 # ~/g/g/c/code (master) $ ./filename
 # ~/g/g/c/code (master) $ echo $status
-# 81
+# 2
 
         .section .data
 
