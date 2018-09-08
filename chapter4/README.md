@@ -36,7 +36,7 @@ they are called.
   stack to enable functions to work properly.
 * In memory, the stack starts at the top of the memory and grows
   downwards due to architectural considerations. (So "top of the
-  stack" means bottom of the stack's memory.)
+  stack" means bottom of the stack's memory.) [Read this article for understanding stack on x86](https://eli.thegreenplace.net/2011/02/04/where-the-top-of-the-stack-is-on-x86/)
 * Instruction that operate on stack: `pushp`, `popl`.
 * `%esp` - Stack register. Contains a pointer to the current top of
   the stack.
