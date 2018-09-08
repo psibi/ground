@@ -27,3 +27,14 @@
 * Assembly setting for close system call
   - System call number: 6
   - %ebx will store the file descriptor.
+
+## Buffers and .bss
+
+* A buffer is a continous blocks of bytes used for bulk data transfer.
+
+### Static Storage
+
+* Declared using `.long` and `.byte` directives.
+* This takes up space in your executable.
+
+
