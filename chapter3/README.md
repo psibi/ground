@@ -121,6 +121,15 @@ other two must be registers.
 * Register mode simply moves data in or out of a register. In all of our examples above, register addressing mode was used for the other operand.
 * Example: `movl $4, %eax`
 
+### Understand code
+
+These codes were written by me to understand the addressing modes better:
+
+* [addressing_variant_1.s](../chapter4/code/addressing_variant_1.s)
+* [addressing_variant_2.s](../chapter4/code/addressing_variant_2.s)
+* [addressing_variant_3.s](../chapter4/code/addressing_variant_3.s)
+* [addressing_variant_4.s](../chapter4/code/addressing_variant_4.s)
+
 ## Layout of register
 
 * If we only want to move data a byte at a time, use `movb`.
