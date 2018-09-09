@@ -70,4 +70,5 @@ External Resource:
 
 * [argc and argv in x86](https://stackoverflow.com/a/16722942/1651941)
 * [Sample argc code](./code/argc.s)
+* [Sample argv code](./code/argv.s)
 
