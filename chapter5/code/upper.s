@@ -48,7 +48,7 @@ open_fd_in:
         int $LINUX_SYSCALL
 
 store_fd_in:
-        movl %eax, ST_FD_OUT(%ebp)
+        movl %eax, ST_FD_IN(%ebp)
 
 open_fd_out:
         movl $SYS_OPEN, %eax
@@ -136,6 +136,3 @@ end_convert_loop:
         movl %ebp, %esp
         popl %ebp
         ret
-        
-
-        
