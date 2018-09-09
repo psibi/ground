@@ -40,25 +40,12 @@ _start:
         subl $ST_SIZE_RESERVE, %esp
 
 open_files:
-open_fd_in:
-        movl $SYS_OPEN, %eax
-        movl ST_ARGV_1(%ebp), %ebx
-        movl $O_RDONLY, %ecx
-        movl $0666, %edx
-        int $LINUX_SYSCALL
 
 store_fd_in:
-        movl %eax, ST_FD_IN(%ebp)
-
-open_fd_out:
-        movl $SYS_OPEN, %eax
-        movl ST_ARGV_2(%ebp), %ebx
-        movl $O_CREATE_WRONLY_TRUNC, %ecx
-        movl $0666, %edx
-        int $LINUX_SYSCALL
+        movl $STDIN, ST_FD_IN(%ebp)
 
 store_fd_out:
-        movl %eax, ST_FD_OUT(%ebp)
+        movl $STDOUT, ST_FD_OUT(%ebp)
 
 read_loop_begin:
         movl $SYS_READ, %eax
