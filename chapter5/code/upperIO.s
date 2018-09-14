@@ -1,3 +1,12 @@
+# $ as --32 upperIO.s -o upperIO.o
+# $ ld -m elf_i386 upperIO.o -o upperIO
+# $ ./upperIO
+# kdfjajak
+# KDFJAJAK
+# AFDdd
+# AFDDD
+
+
         .section .data
 
         .equ SYS_OPEN, 5
