@@ -1,8 +1,8 @@
-~/g/g/c/code (master) $ as --gen-debug --gdwarf-2 --32 test2.s -o test2.o
-~/g/g/c/code (master) $ ld -m elf_i386 test2.o -o test2
-~/g/g/c/code (master) $ ./test2
-~/g/g/c/code (master) $ echo $status
-0
+# $ as --32 test2.s -o test2.o
+# $ ld -m elf_i386 test2.o -o test2
+# $ ./test2
+# $ echo $status
+# 0
 
         .section .bss
 

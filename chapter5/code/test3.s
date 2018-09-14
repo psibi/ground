@@ -1,4 +1,4 @@
-# $ as --gen-debug --gdwarf-2 --32 test3.s -o test3.o
+# $ as --32 test3.s -o test3.o
 # $ ld -m elf_i386 test3.o -o test3
 # $ ./test3
 # $ echo $status
