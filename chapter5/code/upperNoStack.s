@@ -22,12 +22,12 @@
         
         .equ BUFFER_SIZE, 500
         .lcomm BUFFER_DATA, BUFFER_SIZE
+        .lcomm FD_IN, 4
+        .lcomm FD_OUT, 4
 
         .section .text
 
         .equ ST_SIZE_RESERVE, 8
-        .equ ST_FD_IN, -4
-        .equ ST_FD_OUT, -8
         .equ ST_ARGC, 0
         .equ ST_ARGV_0, 4
         .equ ST_ARGV_1, 8
@@ -48,7 +48,7 @@ open_fd_in:
         int $LINUX_SYSCALL
 
 store_fd_in:
-        movl %eax, ST_FD_IN(%ebp)
+        movl %eax, FD_IN
 
 open_fd_out:
         movl $SYS_OPEN, %eax
@@ -58,11 +58,14 @@ open_fd_out:
         int $LINUX_SYSCALL
 
 store_fd_out:
-        movl %eax, ST_FD_OUT(%ebp)
+        movl %eax, FD_OUT
 
 read_loop_begin:
         movl $SYS_READ, %eax
-        movl ST_FD_IN(%ebp), %ebx
+
+        movl $FD_IN, %ebx
+        movl (%ebx), %ebx
+        
         movl $BUFFER_DATA, %ecx
         movl $BUFFER_SIZE, %edx
         int $LINUX_SYSCALL
@@ -79,7 +82,10 @@ continue_read_loop:
 
         movl %eax, %edx
         movl $SYS_WRITE, %eax
-        movl ST_FD_OUT(%ebp), %ebx
+
+        movl $FD_OUT, %ebx
+        movl (%ebx), %ebx
+
         movl $BUFFER_DATA, %ecx
         int $LINUX_SYSCALL
 
@@ -87,11 +93,17 @@ continue_read_loop:
 
 end_loop:
         movl $SYS_CLOSE, %eax
-        movl ST_FD_OUT(%ebp), %ebx
+
+        movl $FD_OUT, %ebx
+        movl (%ebx), %ebx
+
         int $LINUX_SYSCALL
 
         movl $SYS_CLOSE, %eax
-        movl ST_FD_IN(%ebp), %ebx
+
+        movl $FD_IN, %ebx
+        movl (%ebx), %ebx
+        
         int $LINUX_SYSCALL
 
         movl $SYS_EXIT, %eax
