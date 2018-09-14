@@ -1,3 +1,8 @@
+# $ as --32 upper.s -o upper.o
+# $ ld -m elf_i386 upper.o -o upper
+# $ ./upper upper.s UPP.S
+# $ cat UPP.S
+
         .section .data
 
         .equ SYS_OPEN, 5
