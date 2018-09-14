@@ -49,6 +49,17 @@
 
 The directive `.lcomm` will create a symbol `my_buffer` that refers to a 500 byte storage location
 
+Understand these codes:
+
+* [Sample code 1](./code/test.s)
+* [Sample code 2](./code/test2.s)
+* [Sample code 3](./code/test3.s)
+* [Sample code 4](./code/test4.s)
+* [Sample code 5](./code/test5.s)
+* [Sample code 5](./code/check.s)
+* [Sample code 6](./code/check2.s)
+* [Sample code 7](./code/buffer.s)
+
 ## Standard and Special files
 
 Linux programs usually have at least three open file descriptors when they begin.
