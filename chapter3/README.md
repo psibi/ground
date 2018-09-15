@@ -142,3 +142,11 @@ These codes were written by me to understand the addressing modes better:
 * In case of `exit` system call, the operating system requires a
   status code be loaded in `%ebx`.
 * See appendix for more details.
+
+## Experimental code
+
+Try to understand them:
+
+* [./code/check1.s](./code/check1.s)
+* [./code/check2.s](./code/check2.s)
+* [./code/check3.s](./code/check3.s)

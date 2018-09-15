@@ -21,7 +21,7 @@
   - %ecx will store the address of a buffer for storing the data that is read in.
   - %edx will store the size of the buffer
 * Assembly setting for write system call
-  - System call number: 5
+  - System call number: 4
   - Shares the same parameters with read system call.
   - %eax will have the number of bytes written or the error code on execution of the system call.
 * Assembly setting for close system call
@@ -59,6 +59,7 @@ Understand these codes:
 * [Sample code 5](./code/check.s)
 * [Sample code 6](./code/check2.s)
 * [Sample code 7](./code/buffer.s)
+* [Sample code 8](./code/check3.s)
 
 ## Standard and Special files
 
