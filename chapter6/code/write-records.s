@@ -2,6 +2,7 @@
 # $ as --32 write.s -o write.o
 # $ ld -m elf_i386 write-records.o write.o -o write-records
 # $ ./write-records
+# $ cat test.dat
 
         .include "linux.s"
         .include "record-def.s"
