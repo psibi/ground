@@ -1,11 +1,11 @@
 #  $ as --32 read.s -o read.o
 #  $ as --32 count-chars.s -o count-chars.o
 #  $ as --32 write-newline.s -o write-newline.o
-#  $ as --32 large-age.s -o large-age.o
-#  $ ld -m elf_i386 read.o count-chars.o write-newline.o large-age.o -o large-age
-#  $ ./large-age
+#  $ as --32 small-age.s -o small-age.o
+#  $ ld -m elf_i386 read.o count-chars.o write-newline.o small-age.o -o small-age
+#  $ ./small-age
 #  $ echo $status 
-#  45
+#  29
 
         .include "linux.s"
         .include "record-def.s"
@@ -36,7 +36,7 @@ _start:
         movl %eax, ST_INPUT_DESCRIPTOR(%ebp)
         movl $STDOUT, ST_OUTPUT_DESCRIPTOR(%ebp)
 
-        movl $0, max_item
+        movl $255, max_item
 
 record_read_loop:
         pushl ST_INPUT_DESCRIPTOR(%ebp)
@@ -52,7 +52,7 @@ record_read_loop:
 
         movl max_item, %eax
         cmpl %eax, %ebx
-        jge swap
+        jle swap
         jmp record_read_loop
 
 swap:
