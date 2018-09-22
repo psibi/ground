@@ -1,12 +1,11 @@
 #  $ as --32 read.s -o read.o
 #  $ as --32 count-chars.s -o count-chars.o
 #  $ as --32 write-newline.s -o write-newline.o
-#  $ as --32 print-age.s -o print-age.o
-#  $ ld -m elf_i386 read.o count-chars.o write-newline.o print-age.o -o print-age
-#  $ ./print-age
-# Fredrick
-# Marilyn
-# Derrick
+#  $ as --32 large-age.s -o large-age.o
+#  $ ld -m elf_i386 read.o count-chars.o write-newline.o large-age.o -o large-age
+#  $ ./large-age
+#  $ echo $status 
+#  45
 
         .include "linux.s"
         .include "record-def.s"
@@ -17,6 +16,7 @@ file_name:
 
         .section .bss
         .lcomm record_buffer, RECORD_SIZE
+        .lcomm max_item, 4
 
         .section .text
         .globl _start
@@ -36,6 +36,8 @@ _start:
         movl %eax, ST_INPUT_DESCRIPTOR(%ebp)
         movl $STDOUT, ST_OUTPUT_DESCRIPTOR(%ebp)
 
+        movl $0, max_item
+
 record_read_loop:
         pushl ST_INPUT_DESCRIPTOR(%ebp)
         pushl $record_buffer
@@ -45,23 +47,20 @@ record_read_loop:
         cmpl $RECORD_SIZE, %eax
         jne finished_reading
 
-        pushl $RECORD_AGE + record_buffer
-        call count_chars
-        addl $4, %esp
+        movl $RECORD_AGE + record_buffer, %ebx
+        movl (%ebx), %ebx
 
-        movl %eax, %edx
-        movl ST_OUTPUT_DESCRIPTOR(%ebp), %ebx
-        movl $SYS_WRITE, %eax
-        movl $RECORD_AGE + record_buffer, %ecx
-        int $LINUX_SYSCALL
+        movl max_item, %eax
+        cmpl %eax, %ebx
+        jge swap
+        jmp record_read_loop
 
-        pushl ST_OUTPUT_DESCRIPTOR(%ebp)
-        call write_newline
-        addl $4, %esp
-
+swap:
+        movl %ebx, max_item
         jmp record_read_loop
 
 finished_reading:
+        movl max_item, %ebx
+        
         movl $SYS_EXIT, %eax
-        movl $0, %ebx
         int $LINUX_SYSCALL
