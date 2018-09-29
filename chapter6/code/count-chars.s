@@ -1,3 +1,5 @@
+# Result is available in %ecx        
+
         .type count_chars, @function
         
         .globl count_chars
