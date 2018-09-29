@@ -51,15 +51,15 @@ The directive `.lcomm` will create a symbol `my_buffer` that refers to a 500 byt
 
 Understand these codes:
 
-* [Sample code 1](./code/test.s)
-* [Sample code 2](./code/test2.s)
-* [Sample code 3](./code/test3.s)
-* [Sample code 4](./code/test4.s)
-* [Sample code 5](./code/test5.s)
-* [Sample code 5](./code/check.s)
-* [Sample code 6](./code/check2.s)
-* [Sample code 7](./code/buffer.s)
-* [Sample code 8](./code/check3.s)
+* [Sample code 1](./code/test.s) - lcomm based experimentation
+* [Sample code 2](./code/test2.s) - lcomm based experimentation
+* [Sample code 3](./code/test3.s) - lcomm based experimentation
+* [Sample code 4](./code/test4.s) - lcomm based experimentation
+* [Sample code 5](./code/test5.s) - lcomm based experimentation
+* [Sample code 5](./code/check.s) - equ based experimentation
+* [Sample code 6](./code/check2.s) - equ based experimentation
+* [Sample code 7](./code/buffer.s) - SIGSEGV error!
+* [Sample code 8](./code/check3.s) - equ based experimentation gone wrong
 
 ## Standard and Special files
 
