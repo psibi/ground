@@ -3,7 +3,8 @@
 Several ways to write programs:
 * Write code in high level language instead of assembly.
 * Copy/Paste code into your project!
-* Have a set of functions on the system that are shared among any program that wishes to use it. (i.e dynamic libraries)
+* Have a set of functions on the system that are shared among any
+  program that wishes to use it. (i.e dynamic libraries)
 
 Drawback of dynamic libraries:
 
@@ -18,7 +19,9 @@ Drawback of dynamic libraries:
 * [helloworld-nolib.s](./code/helloworld-nolib.s) - Code without using dynamic libray
 * [helloworld-lib.s](./code/helloworld-lib.s) - Code using dynamic library
 
-Running dynamically linked executable proved to be a challenge in my 64 bit machine and I wasn't able to make it work. Please send me a pull request if you have exact instructions on how to do it.
+Running dynamically linked executable proved to be a challenge in my
+64 bit machine and I wasn't able to make it work. Please send me a
+pull request if you have exact instructions on how to do it.
 
 I used [debian i386 image](https://hub.docker.com/r/i386/debian/) to run the program:
 
@@ -68,3 +71,22 @@ they contained all the necessary functionality for the program.
   program is acutally contained within the program file itself, but in
   external libraries.
 * The command `-lc` , instructs the linker to use the `c` library (`libc.so`)
+* [printf-example.s](./code/printf-example.s) : Sample program using libc function
+
+# Building a Dynamic Libray
+
+You need to pass the appropriate options to the linker to build a dynamic library:
+
+* `ld -shared obj1.o obj2.o -o librecord.so`
+* The above command lins two object files togother into a dynamic library named `librecord.so`
+
+Way to use your own dynamic library named `librecord.so`:
+
+* `as program.s -o program.o`
+* `ld -L . -dynamic-linker /lib/ld-linux.so.2 -o exe-name -lrecord program.o`
+* `-L .` told the linker to look for libraries in the current directory.
+* `-lrecord` tells the linkekr to search for functions in the file named `librecord.so`
+
+For proper execution of the above program `exe-name`, you need to set
+`LD_LIBRARY_PATH` environment variable properly to the location of
+`librecord.so`
