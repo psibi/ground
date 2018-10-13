@@ -2,7 +2,6 @@
 # $ as factorial.s -o factorial.o
 # $ ld -shared factorial.o -o libfactorial.so
 # $ ld -L .  factorialmain.o -o factorialmain -lfactorial -dynamic-linker /lib/ld-linux.so.2
-# $ ./factorialmain
 # $ env LD_LIBRARY_PATH="." ./factorialmain
 # $ echo $?
 # 24
