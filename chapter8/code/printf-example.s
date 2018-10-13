@@ -1,4 +1,4 @@
-# $as printf-example.s -o printf-example.o
+# $ as printf-example.s -o printf-example.o
 # $ ld printf-example.o -o printf-example -lc -dynamic-linker /lib/ld-linux.so.2
 # $ ls /lib/ld-li*
 # /lib/ld-linux.so.2
