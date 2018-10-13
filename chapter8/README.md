@@ -17,7 +17,7 @@ Drawback of dynamic libraries:
 # Using a Dynamic library
 
 * [helloworld-nolib.s](./code/helloworld-nolib.s) - Code without using dynamic libray
-* [helloworld-lib.s](./code/helloworld-lib.s) - Code using dynamic library
+* [helloworld-lib.s](./code/hellworld-lib.s) - Code using dynamic library
 
 Running dynamically linked executable proved to be a challenge in my
 64 bit machine and I wasn't able to make it work. Please send me a
