@@ -14,3 +14,4 @@
 
 * [soln1.s](./code/soln1.s)
 * [factorial.s](./code/factorial.s) and [factorialmain.s](./code/factorialmain.s)
+* [factorial.s](./code/factorial.s) and [factorialmain2.s](./code/factorialmain2.s)
