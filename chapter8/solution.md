@@ -12,4 +12,5 @@
 
 # Use the Concepts
 
-* 
+* [soln1.s](./code/soln1.s)
+* [factorial.s](./code/factorial.s) and [factorialmain.s](./code/factorialmain.s)
