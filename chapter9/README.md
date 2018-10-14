@@ -70,3 +70,26 @@ a time.
 * Resident Set size: The amount of memory that your program currently
   has in physical memory is called its resident set size. The `top`
   Unix program has a column named `RES` for this.
+
+# Getting more Memory
+
+* If you need more memory, you can just tell Linux where you want the
+  new break point to be, and Linux will map all the memory you need
+  between the current and new break point and then move the break
+  point to the spot you specify.
+* The way we tell Linux to move the break point is through the `brk`
+  system call.
+* `brk` system call details:
+  - System call number: 45 (should be in `%eax`)
+  - `%ebx` should be loaded with the requested breakpoint.
+  - Linux will returnn the new break point in `%eax`.
+  - New break point might be larger than what you asked for, because
+    Linux rounds up to the nearest page. If there is not enough
+    physical memory or swap to fulfill your request, Linux will return
+    a zero in `%eax`.
+  - If you call `brk` with zero in `%ebx`, it will simply return the
+    last usuable memory address.
+* You need memory manager to avoid fragmentation. Memory manager has
+  two basic functions - `allocate` and `deallocate`. The pool of
+  memory used by memory managers is commonly referred to as the
+  `heap`.
