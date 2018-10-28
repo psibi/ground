@@ -82,7 +82,7 @@ a time.
 * `brk` system call details:
   - System call number: 45 (should be in `%eax`)
   - `%ebx` should be loaded with the requested breakpoint.
-  - Linux will returnn the new break point in `%eax`.
+  - Linux will return the new break point in `%eax`.
   - New break point might be larger than what you asked for, because
     Linux rounds up to the nearest page. If there is not enough
     physical memory or swap to fulfill your request, Linux will return
