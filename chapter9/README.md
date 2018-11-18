@@ -93,3 +93,14 @@ a time.
   two basic functions - `allocate` and `deallocate`. The pool of
   memory used by memory managers is commonly referred to as the
   `heap`.
+
+Book code: [Simple memory manager](./code/alloc.s)
+
+# Performance Issues and Other Problems
+
+* Problem with the above memory manager:
+  - Low speed. (Allocate function is linear compared to the deallocate function)
+  - Large number of calls to the `brk` system call causes context
+    swith between kernel mode and user mode.
+  - We don't track where Linux actually sets the break in the
+    program. This leads to the inefficiency.
