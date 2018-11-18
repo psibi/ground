@@ -14,6 +14,7 @@ current_break:
         .equ UNAVAILABLE, 0
         .equ AVAILABLE, 1
         .equ LINUX_SYSCALL, 0x80
+        .equ SYS_BRK, 45
 
         .section .text
 
